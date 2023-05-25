@@ -3,7 +3,7 @@ import numpy as np
 from circleDetector import Circle
 
 #parameters:
-imageSource = "testPhotos/red-eye0.jpg"
+imageSource = "testPhotos/red-eye9.jpg"
 
 minBrightness = 15
 numOfTests = 30
@@ -67,7 +67,7 @@ justCircles = np.zeros((tamanio[0],tamanio[1]),int).astype(np.uint8)
 justCirclesArea = np.zeros((tamanio[0],tamanio[1]),int).astype(np.uint8)
 
 
-#cv2.imshow("redEdges", imgEdges) #muestra los bordes del umbral
+cv2.imshow("redEdges", imgEdges) #muestra los bordes del umbral
 for x in range(0,tamanio[1]):
     for y in range(0, tamanio[0]):
         found = False
@@ -174,7 +174,7 @@ imgHSV_original[:,:,1] = imgHSV_original[:,:,1]*(1-(bluryCircles*0.9)) #vuelve l
 imgHSV_original[:,:,2] = imgHSV_original[:,:,2]*(1-(bluryCircles*0.8)) #oscurece la zona de los ojos
 finalImg = cv2.cvtColor(imgHSV_original,cv2.COLOR_HSV2BGR)
 
-#cv2.namedWindow("Final image", cv2.WINDOW_NORMAL)
+cv2.namedWindow("Final image", cv2.WINDOW_NORMAL)
 cv2.imshow("Final image", finalImg.astype(np.uint8))
 
 
